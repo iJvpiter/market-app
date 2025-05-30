@@ -27,4 +27,60 @@ public class Producto {
     private Integer cantidadStock;
 
     private Boolean estado;
+
+    public Integer getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(Integer idProducto) {
+        this.idProducto = idProducto;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(String idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public String getCantidad_stock() {
+        return cantidad_stock;
+    }
+
+    public void setCantidad_stock(String cantidad_stock) {
+        this.cantidad_stock = cantidad_stock;
+    }
+
+    public Double getPrecioVenta() {
+        return precioVenta;
+    }
+
+    public void setPrecioVenta(Double precioVenta) {
+        this.precioVenta = precioVenta;
+    }
+
+    public Integer getCantidadStock() {
+        return cantidadStock;
+    }
+
+    public void setCantidadStock(Integer cantidadStock) {
+        this.cantidadStock = cantidadStock;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
 }
