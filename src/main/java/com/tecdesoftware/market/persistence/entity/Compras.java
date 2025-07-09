@@ -1,16 +1,16 @@
 package com.tecdesoftware.market.persistence.entity;
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "compras")
-
 public class Compras {
-    @Id
+
+    @Id //indicar llave primaria
     //Valor único autoincrementable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column (name = "id_compra")
     private Integer idCompra;
 
@@ -24,15 +24,16 @@ public class Compras {
 
     private String comentario;
 
-    private Boolean estado;
+    private String estado;
+
 
     @ManyToOne
-    @JoinColumn (name = "id_cliente", insertable = false, updatable = false)
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "producto")
-    private List<CompraProducto> Productos;
-
+    //>Esto me va a decir cuantos productos se compraron
+    @OneToMany(mappedBy = "compra")
+    private List<CompraProducto> productos;
 
     public Integer getIdCompra() {
         return idCompra;
@@ -74,11 +75,11 @@ public class Compras {
         this.comentario = comentario;
     }
 
-    public Boolean getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(Boolean estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 }

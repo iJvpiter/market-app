@@ -1,25 +1,29 @@
 package com.tecdesoftware.market.persistence.entity;
 import jakarta.persistence.*;
+import com.tecdesoftware.market.persistence.entity.Compras;
+
 import java.util.List;
+
 
 @Entity
 @Table(name = "clientes")
-
 public class Cliente {
-    @Id // Al ponerle @Id especificamos que es la pk (Llave primaria)
-    // No se pone @GeneratedValue... por la CURP
+
+    @Id
+    //no se pone @GeneratedValue(strategy = GenerationType.IDENTITY) por la CURP
     private String id;
 
     private String nombre;
 
     private String apellidos;
 
+    //Long corresponde a un número más grande
     private Long celular;
 
     private String direccion;
 
     @Column (name = "correo_electronico")
-    private String correoElectronico;
+    private String CorreoElectronico;
 
     @OneToMany(mappedBy = "cliente")
     private List<Compras> compras;
@@ -65,10 +69,10 @@ public class Cliente {
     }
 
     public String getCorreoElectronico() {
-        return correoElectronico;
+        return CorreoElectronico;
     }
 
     public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
+        CorreoElectronico = correoElectronico;
     }
 }

@@ -1,6 +1,6 @@
 package com.tecdesoftware.market.persistence.entity;
-
 import jakarta.persistence.*;
+import javax.smartcardio.CardTerminal;
 
 @Entity
 @Table(name = "productos")
@@ -14,11 +14,11 @@ public class Producto {
 
     private String nombre;
 
-    @Column (name = "id_categoria")
-    private String idCategoria;
+    @Column (name= "id_categoria")
+    private Integer idCategoria;
 
-    @Column (name = "cantidad_stock")
-    private String cantidad_stock;
+    @Column (name = "codigo_barras")
+    private String codigoBarras;
 
     @Column (name = "precio_venta")
     private Double precioVenta;
@@ -48,20 +48,20 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public String getIdCategoria() {
+    public Integer getIdCategoria() {
         return idCategoria;
     }
 
-    public void setIdCategoria(String idCategoria) {
+    public void setIdCategoria(Integer idCategoria) {
         this.idCategoria = idCategoria;
     }
 
-    public String getCantidad_stock() {
-        return cantidad_stock;
+    public String getCodigoBarras() {
+        return codigoBarras;
     }
 
-    public void setCantidad_stock(String cantidad_stock) {
-        this.cantidad_stock = cantidad_stock;
+    public void setCodigoBarras(String codigoBarras) {
+        this.codigoBarras = codigoBarras;
     }
 
     public Double getPrecioVenta() {
@@ -91,6 +91,7 @@ public class Producto {
     public Categoria getCategoria() {
         return categoria;
     }
+
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }

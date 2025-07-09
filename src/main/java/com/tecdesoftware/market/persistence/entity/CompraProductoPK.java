@@ -2,16 +2,16 @@ package com.tecdesoftware.market.persistence.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-
 import java.io.Serializable;
+import java.util.Objects;
 
 @Embeddable
 public class CompraProductoPK implements Serializable {
 
-    @Column(name = "id_compra")
+    @Column(name="id_compra")
     private Integer idCompra;
 
-    @Column (name = "id_producto")
+    @Column(name="id_producto")
     private Integer idProducto;
 
     public Integer getIdCompra() {
@@ -30,3 +30,4 @@ public class CompraProductoPK implements Serializable {
         this.idProducto = idProducto;
     }
 }
+

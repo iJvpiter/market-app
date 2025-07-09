@@ -1,8 +1,8 @@
 package com.tecdesoftware.market.domain;
-import jdk.jfr.Category;
+import com.tecdesoftware.market.domain.Category;
 
 public class Product {
-    private int productoId;
+    private int productId;
     private String name;
     private int categoryId;
     private double price;
@@ -10,12 +10,12 @@ public class Product {
     private boolean active;
     private Category category;
 
-    public int getProductoId() {
-        return productoId;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProductoId(int productoId) {
-        this.productoId = productoId;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public String getName() {
