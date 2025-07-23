@@ -29,6 +29,9 @@ public class CompraRepository implements PurchaseRepository {
         return compraCrudRepository.findByIdCliente(clientId).map(compras -> mapper.toPurchases(compras));
     }
 
+
+
+
     @Override
     public Purchase save(Purchase purchase) {
         Compras compra = mapper.toCompras(purchase);

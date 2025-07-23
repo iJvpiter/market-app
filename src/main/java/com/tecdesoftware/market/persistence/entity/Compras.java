@@ -28,8 +28,7 @@ public class Compras {
 
 
     @ManyToOne
-    @MapsId("idCCompra")
-    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    @JoinColumn(name = "id_cliente", referencedColumnName = "id", insertable = false, updatable = false)
     private Cliente cliente;
 
     //>Esto me va a decir cuantos productos se compraron
